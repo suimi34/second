@@ -11,7 +11,8 @@ export default {
       form: {
         name: "",
         age: 20
-      }
+      },
+      term: "",
     };
   },
   methods: {
@@ -27,9 +28,12 @@ export default {
 
   <div>
     <p>some text</p>
-    <ChildForm :value="form" @input="handleUdateInput" />
+    <input text="text" v-model="term" placeholder="term" />
+    <ChildForm :value="form" :parent-term="term" @input="handleUdateInput" />
     {{ form.name }}
     <p>{{  form.age  }}</p>
+    <p>ターム</p>
+    {{  term }}
   </div>
 
 </template>

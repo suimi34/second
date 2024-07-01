@@ -6,9 +6,19 @@ export default {
       type: Object,
       default: () => {},
     },
+    parentTerm: {
+      type: String,
+      default: "",
+    }
   },
   created() {
     console.log(this.value);
+    console.log("parent term", this.parentTerm);
+  },
+  watch: {
+    parentTerm: function (val) {
+      console.log("[watch ]parent term", val);
+    }
   },
   methods: {
     updateName(name) {
